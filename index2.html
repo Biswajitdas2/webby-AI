@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .page-2 {
+        height: 100vh;
+        width: 100%;
+        background-image: linear-gradient(-225deg, #231557 0%, #44107A 29%, #FF1361 67%, #FFF800 100%);
+        position: fixed;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+      @font-face {
+        font-family: bold;
+        src: url(FoundersGroteskCondensed-Bold.woff2);
+      }
+      @font-face {
+        font-family: style;
+        src: url(cardinalfruitweb-regular.woff2);
+      }
+      .page-2 h2 {
+        font-family: bold;
+        color: whitesmoke;
+        font-size: 40px;
+        text-align: center;
+        font-family: style;
+        color: aquamarine;
+      }
+      button{
+        background-color:#FFF800;
+        color: black;
+        height: 50px;
+        width: 150px;
+        border-radius: 30px;
+        font-size: 20px;
+        border: none;
+        margin-top: 20px;
+        cursor: pointer;
+        transition-duration: 0.5s;
+        font-family:'Times New Roman', Times, serif;
+      }
+      button:hover{
+    box-shadow: 1px 1px 30px aqua,
+    1px 2px 10px greenyellow;
+    color: aqua;
+    background-color: black;
+}
+      .main{
+        height: 500px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+      textarea:hover{
+        box-shadow: 1px 1px 30px aqua,
+        1px 2px 10px greenyellow;
+      }
+      textarea{
+        resize: none;
+            height: 300px;
+            width: 500px;
+            font-family: style;
+            font-weight: bolder;
+            letter-spacing: 1px;
+            border-radius: 10px;
+            font-size: 20px;
+            background-color: #321575;
+            color: white;
+            transition-duration: 0.5s;
+      }
+
+
+      @media screen and (max-width:600px) {
+    .navbar{
+        min-width: 200px;
+        text-align: center;
+        overflow: hidden;
+        font-size: 14px;
+    }
+    .navbar p{
+        text-align: center;
+    }
+    body{
+        min-width: 300px;
+        overflow-x: hidden;   
+        min-height: fit-content; 
+        min-width: fit-content;
+        overflow-y: hidden;
+    }
+    .page-2 h2 {
+        font-family: bold;
+        font-size: 25px;
+        text-align: center;
+      }
+      button{
+        background-color:#FFF800;
+        color: black;
+        height: 50px;
+        width: 150px;
+        border-radius: 30px;
+        font-size: 20px;
+        border: none;
+        margin-top: 20px;
+        cursor: pointer;
+        transition-duration: 0.5s;
+        font-family:'Times New Roman', Times, serif;
+      }
+      button:hover{
+    box-shadow: 1px 1px 30px aqua,
+    1px 2px 10px greenyellow;
+    color: aqua;
+    background-color: black;
+}
+      .main{
+        height: 500px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+      textarea:hover{
+        box-shadow: 1px 1px 30px aqua,
+        1px 2px 10px greenyellow;
+      }
+      textarea{
+        resize: none;
+            height: 300px;
+            width: 300px;
+            font-family: style;
+            font-weight: bolder;
+            letter-spacing: 1px;
+            border-radius: 10px;
+            font-size: 20px;
+            background-color: #321575;
+            color: white;
+            transition-duration: 0.5s;
+      }
+     
+
+  }
+    </style>
+  </head>
+  <body>
+    <div class="page-2">
+      <h2>Welcome to webby world<br>
+        write anything you want
+    </h2>
+      <div class="main">
+        <textarea
+          id="input"
+          rows="10"
+          cols="20"
+          placeholder="write anything you want"
+        ></textarea>
+       <button onclick="speak()">  <i class="fa-solid fa-play"></i> Listen </button>
+      </div>
+    </div>
+    <script>
+      function speak() {
+        var text = document.getElementById("input").value;
+        var text1 = new SpeechSynthesisUtterance(text);
+        speechSynthesis.speak(text1);
+      }
+    </script>
+  </body>
+</html>
